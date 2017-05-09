@@ -1,0 +1,51 @@
+// Calculate padding bottom for responsive background images
+//----------------------------------------------------------
+
+@function calculatePB($height, $width, $size) {
+  $padding: $height / $width * $size;
+  @return $padding*1%;
+}
+
+@mixin paddingBottom($height, $width, $size) {
+  padding-bottom: calculatePB($height, $width, $size);
+}
+
+// Calculate REM font size
+//----------------------------------------------------------
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// Media queries (adjust values in _var.scss)
+//----------------------------------------------------------
+
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == large {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+// Generate coloumns (if not using a grid system)
+//----------------------------------------------------------
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: $i/12 * 100%;
+    @include respond-to(small) {
+      width: 100%;
+    }
+  }
+}

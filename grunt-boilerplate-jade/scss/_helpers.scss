@@ -1,0 +1,34 @@
+.horizontal-center { @extend %horizontal-center; }
+%horizontal-center {
+  margin: 0 auto;
+}
+
+.vertical-center { @extend %vertical-center; }
+%vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pull-r { @extend %pull-r; }
+%pull-r {
+  float: right;
+}
+
+.pull-l { @extend %pull-l; }
+%pull-l {
+  float: left;
+}
+
+// Clearfix
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
