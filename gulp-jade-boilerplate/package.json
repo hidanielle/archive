@@ -1,0 +1,21 @@
+{
+  "name": "hidanielle-gulp-bp-jade",
+  "version": "0.1.1",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^3.2.2",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.1"
+  },
+  "dependencies": {
+    "del": "^2.2.0"
+  }
+}
